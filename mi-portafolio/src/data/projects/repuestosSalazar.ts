@@ -49,6 +49,9 @@ Desarrollo escalable de aplicaciones empresariales`,
   ],
   techStack: ['Node.js', 'Express', 'MongoDB', 'Mongoose'],
   tags: ['Node.js', 'Backend', 'MongoDB'],
+  banner: '/repuestos_salazar.png',
+  repo: 'https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar',
+  demo: '',
 }
 
 export default repuestosSalazar

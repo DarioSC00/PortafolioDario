@@ -31,11 +31,26 @@ export default function About() {
             <span className="about-card__date">Oct 2025 – Abr 2026</span>
           </div>
           <ul className="about-list">
-            <li>APIs REST con Node.js, Python y TypeScript</li>
-            <li>Diseño y modelado SQL y NoSQL</li>
-            <li>Interfaces modernas con React y Next.js</li>
-            <li>Metodologías Agile (Scrum, Kanban)</li>
-            <li>Git avanzado, PR reviews y pair programming</li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>APIs REST con Node.js, Python y TypeScript</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Diseño y modelado SQL y NoSQL</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Interfaces modernas con React y Next.js</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Metodologías Agile (Scrum, Kanban)</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Git avanzado, PR reviews y pair programming</span>
+            </li>
           </ul>
         </article>
 
@@ -49,11 +64,26 @@ export default function About() {
             <span className="about-card__date">SENA · 2023 – 2026</span>
           </div>
           <ul className="about-list">
-            <li>Ciclo completo de desarrollo de software</li>
-            <li>Metodologías ágiles e ingeniería de software</li>
-            <li>Bases de datos relacionales y NoSQL</li>
-            <li>Seguridad en aplicaciones web</li>
-            <li>Proyectos capstone con clientes reales</li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Ciclo completo de desarrollo de software</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Metodologías ágiles e ingeniería de software</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Bases de datos relacionales y NoSQL</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Seguridad en aplicaciones web</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Proyectos capstone con clientes reales</span>
+            </li>
           </ul>
         </article>
 
@@ -63,11 +93,26 @@ export default function About() {
           </div>
           <h3>Valores y Enfoque</h3>
           <ul className="about-list">
-            <li>✓ Calidad de código y testing</li>
-            <li>✓ Comunicación clara y documentación</li>
-            <li>✓ Mentalidad de aprendizaje continuo</li>
-            <li>✓ Responsabilidad y profesionalismo</li>
-            <li>✓ Pasión por resolver problemas</li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Calidad de código y testing</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Comunicación clara y documentación</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Mentalidad de aprendizaje continuo</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Responsabilidad y profesionalismo</span>
+            </li>
+            <li>
+              <span className="about-list-bullet">✓</span>
+              <span>Pasión por resolver problemas</span>
+            </li>
           </ul>
         </article>
 

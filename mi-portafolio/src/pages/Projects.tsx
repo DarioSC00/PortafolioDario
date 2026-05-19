@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Icon } from '@iconify/react'
 import { LightBulbIcon } from '@heroicons/react/24/solid'
 import VerDetalle from '../modals/VerDetalle'
-import { loadProjects } from '../data/projects/storage'
+import projects from '../data/projects/index'
 
 export interface Project {
   title: string
@@ -17,18 +17,9 @@ export interface Project {
 }
 
 export default function Projects() {
-  const [projects, setProjects] = useState<Project[]>(() => loadProjects())
   const [selected, setSelected] = useState<Project | null>(null)
   const [open, setOpen] = useState(false)
   const [filter, setFilter] = useState<string>('all')
-
-  useEffect(() => {
-    function onUpdate() {
-      setProjects(loadProjects())
-    }
-    window.addEventListener('projects-updated', onUpdate)
-    return () => window.removeEventListener('projects-updated', onUpdate)
-  }, [])
 
   function openModal(p: Project) {
     setSelected(p)
@@ -42,6 +33,8 @@ export default function Projects() {
 
   const uniqueTags = Array.from(new Set(projects.flatMap((p) => p.tags || [])))
   const filteredProjects = filter === 'all' ? projects : projects.filter((p) => p.tags?.includes(filter))
+
+
 
   return (
     <section className="projects-page">

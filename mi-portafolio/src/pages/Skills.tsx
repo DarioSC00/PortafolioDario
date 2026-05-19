@@ -68,25 +68,20 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="skills-grid">
+      <div className="about-grid">
         {skillSections.map((section) => {
           const IconComponent = section.icon
           return (
-            <article key={section.title} className="skill-card">
-              <div className="skill-card__head">
-                <div className="skill-card__icon-box">
-                  <IconComponent className="card-icon" />
-                </div>
-                <div>
-                  <h3>{section.title}</h3>
-                  <p className="skill-card__hint">Capacidades que impulsan cada fase del proyecto.</p>
-                </div>
+            <article key={section.title} className="about-card">
+              <div className="about-card__icon-wrapper">
+                <IconComponent className="card-icon" />
               </div>
-              <ul className="skill-list">
+              <h3>{section.title}</h3>
+              <ul className="about-list">
                 {section.items.map((item) => (
                   <li key={item}>
-                    <span className="skill-bullet">•</span>
-                    {item}
+                    <span className="about-list-bullet">✓</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -97,3 +92,4 @@ export default function Skills() {
     </section>
   )
 }
+

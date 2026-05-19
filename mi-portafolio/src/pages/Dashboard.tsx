@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { FolderIcon, ServerStackIcon, SparklesIcon, LinkIcon, ChartBarSquareIcon, RocketLaunchIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
-import { loadProjects, saveProjects } from '../data/projects/storage'
+import projects from '../data/projects/index'
 
 const summaryItems = [
   {
@@ -51,16 +51,6 @@ const insightCards = [
 ]
 
 export default function Dashboard() {
-  const [projects, setProjects] = useState(() => loadProjects())
-
-  useEffect(() => {
-    function onUpdate() {
-      setProjects(loadProjects())
-    }
-    window.addEventListener('projects-updated', onUpdate)
-    return () => window.removeEventListener('projects-updated', onUpdate)
-  }, [])
-
   const totalProjects = projects.length
   const totalTech = useMemo(() => new Set(projects.flatMap((p: any) => p.techStack || [])).size, [projects])
   const totalTags = useMemo(() => new Set(projects.flatMap((p: any) => p.tags || [])).size, [projects])
@@ -94,24 +84,6 @@ export default function Dashboard() {
   const topTags = Object.entries(tagCounts)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 4)
-
-  function addExampleProject() {
-    const next = [
-      ...projects,
-      {
-        title: `Nuevo proyecto ${projects.length + 1}`,
-        description: 'Ejemplo de proyecto para el dashboard.',
-        longDescription: 'Este proyecto de ejemplo ayuda a ver cómo la vista se actualiza dinámicamente.',
-        features: ['Nueva tarjeta', 'Actualiza métricas', 'Persistencia automática'],
-        techStack: ['React'],
-        tags: ['Demo'],
-        repo: '',
-        demo: '',
-      },
-    ]
-    saveProjects(next)
-    setProjects(next)
-  }
 
   const maxTech = Math.max(...Object.values(techCounts), 1)
   const maxTag = Math.max(...Object.values(tagCounts), 1)
@@ -174,7 +146,6 @@ export default function Dashboard() {
               <span className="summary-chip">Tecnologías</span>
               <h3>Tecnologías más usadas</h3>
             </div>
-            <button className="secondary-button" onClick={addExampleProject}>Agregar ejemplo</button>
           </div>
           <div className="dashboard-chart-preview">
             {topTech.map(([tech, count]) => (
@@ -197,6 +168,7 @@ export default function Dashboard() {
               ))}
           </ul>
         </article>
+
 
         <article className="dashboard-card dashboard-chart">
           <div className="chart-card-header">

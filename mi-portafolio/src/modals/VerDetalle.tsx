@@ -71,23 +71,6 @@ export default function VerDetalle({ open, onClose, project }: Props) {
 					</button>
 				</header>
 
-				{project?.banner ? (
-					<img src={project.banner} alt={project.title} className="modal-banner" />
-				) : (
-					<div className="modal-banner-fallback" style={{
-						width: '100%',
-						height: '140px',
-						background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%)',
-						borderRadius: '22px',
-						marginBottom: '24px',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						border: '1px solid var(--border)'
-					}}>
-						<Icon icon="mdi:code-tags" style={{ width: '48px', height: '48px', color: 'var(--accent)' }} />
-					</div>
-				)}
 
 				<div className="modal-body" style={{ display: 'grid', gap: '20px' }}>
 					
