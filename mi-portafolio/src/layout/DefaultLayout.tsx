@@ -45,6 +45,13 @@ export default function DefaultLayout() {
 
   return (
     <div className="app-shell">
+      {/* Ambient glassmorphic glowing spheres */}
+      <div className="ambient-glows" aria-hidden="true">
+        <div className="glow-sphere glow-1"></div>
+        <div className="glow-sphere glow-2"></div>
+        <div className="glow-sphere glow-3"></div>
+      </div>
+
       <header className="app-header">
         <div className="brand-panel">
           <div>
@@ -52,11 +59,16 @@ export default function DefaultLayout() {
             <h1>Rubén Darío Salazar</h1>
           </div>
           <div className="brand-panel-actions">
-            <button type="button" onClick={toggleTheme} className="theme-toggle">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="theme-toggle"
+              data-tooltip="Alternar tema claro/oscuro"
+            >
               {theme === 'light' ? <MoonIcon className="theme-icon" /> : <SunIcon className="theme-icon" />}
               <span>{theme === 'light' ? 'Modo oscuro' : 'Modo claro'}</span>
             </button>
-            <div className="brand-chip">
+            <div className="brand-chip" data-tooltip="Disponible para contratación inmediata">
               <BoltIcon className="brand-icon" />
               Full-Stack Junior
             </div>
@@ -67,7 +79,12 @@ export default function DefaultLayout() {
           {navItems.map((item) => {
             const IconComponent = item.icon
             return (
-              <NavLink key={item.to} to={item.to} className={linkClasses}>
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={linkClasses}
+                data-tooltip={`Ir a ${item.label}`}
+              >
                 <IconComponent className="nav-icon" />
                 <span>{item.label}</span>
               </NavLink>
@@ -81,15 +98,27 @@ export default function DefaultLayout() {
       </main>
 
       <footer className="app-footer">
-        <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span className="pulse-indicator" data-tooltip="En línea / Activo ahora"></span>
           <span>Medellín, Colombia</span>
+          <span>•</span>
           <span>312 891 4563</span>
         </div>
         <div className="footer-links">
-          <a href="https://github.com/DarioSC00" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/DarioSC00"
+            target="_blank"
+            rel="noreferrer"
+            data-tooltip="Visitar mi GitHub"
+          >
             <Icon icon="akar-icons:github-fill" /> GitHub
           </a>
-          <a href="https://linkedin.com/in/rubén-dario-salazar-cuero-39867125a/" target="_blank" rel="noreferrer">
+          <a
+            href="https://linkedin.com/in/rubén-dario-salazar-cuero-39867125a/"
+            target="_blank"
+            rel="noreferrer"
+            data-tooltip="Conectar en LinkedIn"
+          >
             <Icon icon="akar-icons:linkedin-box-fill" /> LinkedIn
           </a>
         </div>

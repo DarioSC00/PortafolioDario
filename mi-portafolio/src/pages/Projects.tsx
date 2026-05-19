@@ -114,11 +114,14 @@ export default function Projects() {
             </div>
 
             <div className="project-card__footer">
-              <button onClick={() => openModal(p)} className="project-link primary-btn">
+              <button
+                onClick={() => openModal(p)}
+                className="project-link primary-btn"
+                data-tooltip={`Ver ficha técnica de ${p.title}`}
+              >
                 <span>Ver detalles</span>
                 <Icon icon="mdi:arrow-right" />
               </button>
-
             </div>
           </article>
         ))}

@@ -1481,3 +1481,266 @@
   color: var(--accent);
   border-color: rgba(56, 189, 248, 0.24);
 }
+
+/* ----------------------------------------------------
+   EFFECTS & ANIMATIONS (SaaS Premium Visual Style)
+   ---------------------------------------------------- */
+
+/* 1. Ambient Pulsing and Drifting Glow Spheres */
+.ambient-glows {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glow-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.45;
+  transition: opacity 0.5s ease;
+}
+
+.light-theme .glow-sphere {
+  opacity: 0.15;
+  filter: blur(140px);
+}
+
+.glow-1 {
+  top: -10%;
+  left: -10%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, transparent 70%);
+  animation: driftGlow1 25s infinite alternate ease-in-out;
+}
+
+.glow-2 {
+  bottom: -15%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.24) 0%, transparent 70%);
+  animation: driftGlow2 30s infinite alternate ease-in-out;
+}
+
+.glow-3 {
+  top: 40%;
+  left: 50%;
+  width: 35vw;
+  height: 35vw;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  animation: driftGlow3 28s infinite alternate ease-in-out;
+}
+
+@keyframes driftGlow1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8%, 12%) scale(1.1); }
+  100% { transform: translate(-5%, 5%) scale(0.95); }
+}
+
+@keyframes driftGlow2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-10%, -8%) scale(0.9); }
+  100% { transform: translate(5%, -15%) scale(1.1); }
+}
+
+@keyframes driftGlow3 {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-42%, -55%) scale(1.15); }
+  100% { transform: translate(-58%, -45%) scale(0.9); }
+}
+
+/* 2. Page Entrance Slide/Fade Animation */
+.home-page,
+.about-page,
+.skills-page,
+.projects-page,
+.dashboard-page,
+.contact-page {
+  animation: pageEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes pageEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* 3. Reusable Glassmorphic Shimmer Sweep Overlay on Card Hover */
+.summary-card,
+.about-card,
+.skill-card,
+.project-card,
+.contact-card,
+.dashboard-card,
+.project-summary-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card::after,
+.about-card::after,
+.skill-card::after,
+.project-card::after,
+.contact-card::after,
+.dashboard-card::after,
+.project-summary-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    55deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.08) 48%,
+    rgba(56, 189, 248, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 52%,
+    transparent 58%
+  );
+  transform: rotate(-35deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: none;
+}
+
+.summary-card:hover::after,
+.about-card:hover::after,
+.skill-card:hover::after,
+.project-card:hover::after,
+.contact-card:hover::after,
+.dashboard-card:hover::after,
+.project-summary-card:hover::after {
+  opacity: 1;
+  left: 130%;
+  transition: left 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 4. Glassmorphic Tooltips (data-tooltip) */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px) scale(0.95);
+  padding: 8px 12px;
+  background: rgba(10, 18, 34, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1000;
+}
+
+.light-theme [data-tooltip]::before {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: #0f172a;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* 5. Pulsing Status Indicator (Green dot) */
+.pulse-indicator {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  animation: pulseGreen 2s infinite;
+  cursor: help;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.92);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.92);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* 6. Dashboard Progress Bar Entrance Anim */
+@keyframes loadBar {
+  from {
+    width: 0;
+  }
+}
+
+.chart-bar {
+  animation: loadBar 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* 7. Hover Micro-Interactions on Icons & Links */
+.brand-chip:hover .brand-icon {
+  animation: spinPulse 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite alternate;
+}
+
+@keyframes spinPulse {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.22) rotate(15deg);
+    color: #eab308;
+    filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.5));
+  }
+}
+
+.nav-link .nav-icon {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.25s ease;
+}
+
+.nav-link:hover .nav-icon {
+  transform: translateY(-3px) scale(1.12);
+  color: var(--accent);
+}
+
+.footer-links a svg,
+.project-link svg {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.footer-links a:hover svg {
+  transform: scale(1.25) rotate(8deg);
+  color: var(--accent);
+}
+
+.project-link:hover svg {
+  transform: translateX(4px);
+}
