@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { BriefcaseIcon, AcademicCapIcon, GlobeAltIcon, CodeBracketIcon, SparklesIcon, HeartIcon } from '@heroicons/react/24/solid'
+import { BriefcaseIcon, AcademicCapIcon, GlobeAltIcon, HeartIcon } from '@heroicons/react/24/solid'
 
 const achievements = [
   { icon: 'mdi:code-braces', label: 'APIs REST' },

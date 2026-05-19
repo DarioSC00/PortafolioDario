@@ -70,69 +70,106 @@ export default function VerDetalle({ open, onClose, project }: Props) {
 						<XMarkIcon width={22} height={22} />
 					</button>
 				</header>
-				<header className="flex items-start justify-between">
-					<h3 className="text-xl font-semibold text-white">{project?.title}</h3>
-					<button
-						onClick={onClose}
-						aria-label="Cerrar"
-						className="text-gray-400 hover:text-white"
-					>
-						✕
-					</button>
-				</header>
 
-				<div className="mt-4 text-sm text-gray-300 space-y-4">
-					{project?.description || 'No hay descripción disponible.'}
+				{project?.banner ? (
+					<img src={project.banner} alt={project.title} className="modal-banner" />
+				) : (
+					<div className="modal-banner-fallback" style={{
+						width: '100%',
+						height: '140px',
+						background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%)',
+						borderRadius: '22px',
+						marginBottom: '24px',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						border: '1px solid var(--border)'
+					}}>
+						<Icon icon="mdi:code-tags" style={{ width: '48px', height: '48px', color: 'var(--accent)' }} />
+					</div>
+				)}
 
+				<div className="modal-body" style={{ display: 'grid', gap: '20px' }}>
+					
 					{project?.longDescription && (
-						<div className="modal-longtext">
-							{project.longDescription}
+						<div className="modal-section">
+							<h4 className="modal-section-title">
+								<Icon icon="mdi:text-box-outline" className="modal-section-icon" />
+								Detalles del Proyecto
+							</h4>
+							<div className="modal-longtext">
+								{project.longDescription}
+							</div>
 						</div>
 					)}
 
 					{project?.features && (
-						<div>
-							<h4 className="mt-2 font-medium text-gray-200">Características</h4>
-							<ul className="mt-2 ml-4 list-disc text-gray-300">
+						<div className="modal-section">
+							<h4 className="modal-section-title">
+								<Icon icon="mdi:star-circle" className="modal-section-icon" />
+								Características Clave
+							</h4>
+							<ul className="modal-feature-list">
 								{project.features.map((f) => (
-									<li key={f}>{f}</li>
+									<li key={f} className="modal-feature-item">
+										<span className="modal-feature-dot">•</span>
+										<p style={{ margin: 0, color: 'var(--text)', lineHeight: 1.65 }}>{f}</p>
+									</li>
 								))}
 							</ul>
 						</div>
 					)}
 
 					{project?.techStack && (
-						<div className="mt-3 flex flex-wrap gap-2">
+						<div className="modal-section">
+							<h4 className="modal-section-title">
+								<Icon icon="mdi:code-tags" className="modal-section-icon" />
+								Tecnologías Utilizadas
+							</h4>
+							<div className="modal-badge-row">
 								{project.techStack.map((t) => (
 									<span key={t} className="modal-tech-badge">
 										{t}
 									</span>
 								))}
+							</div>
 						</div>
 					)}
 
 					{project?.tags && (
-						<div className="mt-4 flex flex-wrap gap-2">
-							{project.tags.map((t) => (
-								<span key={t} className="modal-tag">
-									{t}
-								</span>
-							))}
+						<div className="modal-section">
+							<h4 className="modal-section-title">
+								<Icon icon="mdi:label" className="modal-section-icon" />
+								Etiquetas
+							</h4>
+							<div className="modal-tag-row">
+								{project.tags.map((t) => (
+									<span key={t} className="modal-tag">
+										{t}
+									</span>
+								))}
+							</div>
 						</div>
 					)}
 
-					{ (project?.repo || project?.demo) && (
-						<div className="mt-4 modal-links">
-							{project.repo && (
-								<a className="btn-gradient" href={project.repo} target="_blank" rel="noreferrer">
-									<Icon icon="mdi:github" /> Repo
-								</a>
-							)}
-							{project.demo && (
-								<a className="btn-secondary" href={project.demo} target="_blank" rel="noreferrer">
-									<Icon icon="mdi:monitor" /> Demo
-								</a>
-							)}
+					{(project?.repo || project?.demo) && (
+						<div className="modal-section" style={{ marginTop: '10px' }}>
+							<h4 className="modal-section-title">
+								<Icon icon="mdi:link-variant" className="modal-section-icon" />
+								Enlaces
+							</h4>
+							<div className="modal-links">
+								{project.repo && (
+									<a className="btn-gradient" href={project.repo} target="_blank" rel="noreferrer">
+										<Icon icon="mdi:github" /> Repositorio
+									</a>
+								)}
+								{project.demo && (
+									<a className="btn-secondary" href={project.demo} target="_blank" rel="noreferrer">
+										<Icon icon="mdi:monitor" /> Demo Activa
+									</a>
+								)}
+							</div>
 						</div>
 					)}
 

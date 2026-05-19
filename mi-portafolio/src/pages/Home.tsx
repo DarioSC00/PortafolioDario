@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react'
 import { SparklesIcon, ArrowRightIcon, CheckCircleIcon, RocketLaunchIcon, CodeBracketIcon } from '@heroicons/react/24/solid'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -17,13 +18,13 @@ export default function Home() {
             Mi objetivo es transformar ideas en productos listos para el mercado.
           </p>
           <div className="hero-actions">
-            <a className="primary-button" href="/contact">
+            <Link className="primary-button" to="/contact">
               Iniciemos juntos
               <ArrowRightIcon className="button-icon" />
-            </a>
-            <a className="secondary-button" href="/projects">
+            </Link>
+            <Link className="secondary-button" to="/projects">
               Explora mi trabajo
-            </a>
+            </Link>
           </div>
           <div className="hero-tags">
             <span>

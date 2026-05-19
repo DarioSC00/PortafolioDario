@@ -88,7 +88,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 0.8rem;
-  color: #7dd3fc;
+  color: var(--accent);
 }
 
 h1,
@@ -99,7 +99,7 @@ h4 {
 }
 
 p {
-  color: #cbd5e1;
+  color: var(--muted);
 }
 
 ul {

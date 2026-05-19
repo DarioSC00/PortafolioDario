@@ -1,11 +1,20 @@
 import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
-import { StarIcon, SparklesIcon, LightBulbIcon } from '@heroicons/react/24/solid'
+import { LightBulbIcon } from '@heroicons/react/24/solid'
 import VerDetalle from '../modals/VerDetalle'
-import defaults from '../data/projects'
 import { loadProjects } from '../data/projects/storage'
 
-type Project = (typeof defaults)[number]
+export interface Project {
+  title: string
+  description?: string
+  longDescription?: string
+  features?: string[]
+  techStack?: string[]
+  tags?: string[]
+  banner?: string
+  repo?: string
+  demo?: string
+}
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>(() => loadProjects())

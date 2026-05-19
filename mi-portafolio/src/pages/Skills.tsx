@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { CheckBadgeIcon, CodeBracketSquareIcon, CloudArrowUpIcon, BoltIcon, ShieldCheckIcon, SparklesIcon } from '@heroicons/react/24/solid'
+import { CodeBracketSquareIcon, CloudArrowUpIcon, ShieldCheckIcon, SparklesIcon } from '@heroicons/react/24/solid'
 
 const skillSections = [
   {

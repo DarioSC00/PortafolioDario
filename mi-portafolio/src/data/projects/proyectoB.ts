@@ -7,6 +7,7 @@ const proyectoB = {
   tags: ['Analytics', 'Dashboard'],
   repo: '',
   demo: '',
+  banner: '/dashboard_analitico.png',
 }
 
 export default proyectoB
