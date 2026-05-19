@@ -1,36 +1,39 @@
 import { Icon } from '@iconify/react'
-import { SparklesIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
+import { SparklesIcon, ArrowRightIcon, CheckCircleIcon, RocketLaunchIcon, CodeBracketIcon } from '@heroicons/react/24/solid'
 
 export default function Home() {
   return (
     <section className="home-page">
       <div className="hero-panel">
         <div className="hero-copy">
-          <span className="eyebrow">Desarrollador Full-Stack Junior</span>
-          <h2>Construyo interfaces oscuras y APIs escalables con un estilo moderno.</h2>
+          <div className="hero-badge">
+            <SparklesIcon className="hero-badge-icon" />
+            Desarrollador Full-Stack Junior
+          </div>
+          <h2>Construyo interfaces hermosas y APIs robustas que escalan.</h2>
           <p>
-            Soy Rubén Darío, apasionado por crear soluciones web y móviles con React,
-            Node.js, Python y Flutter. Mi portafolio refleja experiencia en desarrollo frontend,
-            backend y despliegue, con enfoque en calidad, rendimiento y diseño.
+            Soy Darío, desarrollador apasionado por crear soluciones web y móviles de alta calidad.
+            Especializado en React, Node.js, TypeScript y arquitectura escalable.
+            Mi objetivo es transformar ideas en productos listos para el mercado.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="/contact">
-              Contactame
+              Iniciemos juntos
               <ArrowRightIcon className="button-icon" />
             </a>
             <a className="secondary-button" href="/projects">
-              Ver proyectos
+              Explora mi trabajo
             </a>
           </div>
           <div className="hero-tags">
             <span>
-              <SparklesIcon className="tag-icon" /> React Hooks
+              <CheckCircleIcon className="tag-icon" /> Fullstack
             </span>
             <span>
-              <SparklesIcon className="tag-icon" /> APIs RESTful
+              <RocketLaunchIcon className="tag-icon" /> Escalable
             </span>
             <span>
-              <SparklesIcon className="tag-icon" /> Docker & CI/CD
+              <CodeBracketIcon className="tag-icon" /> Moderno
             </span>
           </div>
         </div>
@@ -39,20 +42,21 @@ export default function Home() {
           <div className="hero-card__content">
             <div className="hero-card__header">
               <div>
-                <p>Rubén Darío Salazar Cuero</p>
-                <span>Junior Full-Stack Developer</span>
+                <p>Darío Salazar Cuero</p>
+                <span>Full-Stack Developer</span>
               </div>
               <Icon icon="mdi:terminal" className="hero-card-icon" />
             </div>
             <div className="hero-card__body">
               <p>
-                Desarrollo aplicaciones con interfaces dinámicas, arquitecturas REST, bases
-                de datos y despliegue en entornos escalables.
+                Desarrollo aplicaciones web con React, crearé backends sólidos con Node.js,
+                y despliego en producción con confianza. Enfoque en código limpio y experiencia excepcional.
               </p>
               <ul>
-                <li>React + TypeScript</li>
+                <li>React 19 + TypeScript</li>
                 <li>Node.js / FastAPI</li>
-                <li>Next.js / Flutter</li>
+                <li>PostgreSQL / MongoDB</li>
+                <li>Docker & CI/CD</li>
               </ul>
             </div>
           </div>
@@ -61,19 +65,28 @@ export default function Home() {
 
       <div className="summary-grid">
         <article className="summary-card">
+          <div className="summary-card__icon">
+            <Icon icon="mdi:map-marker" />
+          </div>
           <span className="summary-chip">Ubicación</span>
           <h3>Medellín, Colombia</h3>
-          <p>Trabajo con equipos ágiles y entrego productos listos para producción.</p>
+          <p>Trabajo 100% remoto, disponible para equipos globales.</p>
         </article>
         <article className="summary-card">
+          <div className="summary-card__icon">
+            <Icon icon="mdi:book-open" />
+          </div>
           <span className="summary-chip">Inglés</span>
-          <h3>Nivel B1</h3>
-          <p>Comunicación en proyectos técnicos y documentación con fluidez.</p>
+          <h3>B1 Intermediate</h3>
+          <p>Comunicación fluida en código y documentación técnica.</p>
         </article>
         <article className="summary-card">
-          <span className="summary-chip">Contacto</span>
-          <h3>rubendario50cent@gmail.com</h3>
-          <p>Disponible para colaborar en proyectos web y móviles.</p>
+          <div className="summary-card__icon">
+            <Icon icon="mdi:email-outline" />
+          </div>
+          <span className="summary-chip">Disponible</span>
+          <h3>Proyectos freelance</h3>
+          <p>Construyamos tu próxima idea juntos, desde 0.</p>
         </article>
       </div>
     </section>
