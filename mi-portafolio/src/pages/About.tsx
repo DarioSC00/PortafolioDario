@@ -2,10 +2,12 @@ import { Icon } from '@iconify/react'
 import { BriefcaseIcon, AcademicCapIcon, GlobeAltIcon, HeartIcon } from '@heroicons/react/24/solid'
 
 const achievements = [
-  { icon: 'mdi:code-braces', label: 'APIs REST' },
-  { icon: 'mdi:react', label: 'React Hooks' },
-  { icon: 'mdi:database', label: 'SQL/NoSQL' },
+  { icon: 'mdi:cellphone-link', label: 'Flutter (Móvil)' },
+  { icon: 'mdi:code-braces', label: 'APIs RESTful' },
+  { icon: 'mdi:database-cog', label: 'Optimización de Bases de Datos' },
   { icon: 'mdi:docker', label: 'Docker' },
+  { icon: 'mdi:lightning-bolt', label: 'FastAPI & Node.js' },
+  { icon: 'mdi:react', label: 'React / Next.js' },
 ]
 
 export default function About() {
@@ -13,10 +15,11 @@ export default function About() {
     <section className="about-page">
       <div className="section-intro">
         <span className="eyebrow">Sobre mí</span>
-        <h2>Full-Stack Junior enfocado en código limpio y arquitectura escalable.</h2>
+        <h2>Desarrollador Full-Stack Junior especializado en Web y Móvil</h2>
         <p>
-          Desarrollador de software con pasión por crear aplicaciones que resuelven problemas reales.
-          Mi enfoque es en frontend moderno, APIs robustas, y despliegue confiable.
+          Especialista en la arquitectura de APIs RESTful, diseño y optimización de bases de datos y despliegue de soluciones escalables.
+          Experto en el desarrollo de interfaces dinámicas con React (Hooks) y aplicaciones multiplataforma con Flutter/Dart.
+          Dominio de múltiples lenguajes y frameworks, orientado a la calidad del software, contenedores con Docker y metodologías ágiles.
         </p>
       </div>
 
@@ -27,29 +30,30 @@ export default function About() {
           </div>
           <h3>Experiencia Profesional</h3>
           <div className="about-card__meta">
-            <span className="about-card__company">Lynxus Solutions S.A.S. (EPAM)</span>
+            <span className="about-card__company">Junior Software Developer (Intern – Data)</span>
+            <span className="about-card__company-sub">Lynxus Solutions S.A.S. (EPAM)</span>
             <span className="about-card__date">Oct 2025 – Abr 2026</span>
           </div>
           <ul className="about-list">
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>APIs REST con Node.js, Python y TypeScript</span>
+              <span><strong>Desarrollo Backend:</strong> Creación, implementación y consumo de APIs REST robustas utilizando Node.js, FastAPI, TypeScript, Python, HTML5 y Docker.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Diseño y modelado SQL y NoSQL</span>
+              <span><strong>Gestión de Datos:</strong> Modelado, administración y optimización avanzada de bases de datos relacionales (SQL, MySQL) y NoSQL (MongoDB).</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Interfaces modernas con React y Next.js</span>
+              <span><strong>Desarrollo Frontend:</strong> Creación de interfaces web modernas y fluidas con React y Next.js (Hooks avanzados).</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Metodologías Agile (Scrum, Kanban)</span>
+              <span><strong>Metodologías Ágiles:</strong> Trabajo activo en equipos bajo Scrum, y control de versiones con Git, GitHub y GitLab.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Git avanzado, PR reviews y pair programming</span>
+              <span><strong>Idiomas:</strong> Comunicación técnica y documentación con nivel de inglés B1.</span>
             </li>
           </ul>
         </article>
@@ -60,29 +64,30 @@ export default function About() {
           </div>
           <h3>Formación Académica</h3>
           <div className="about-card__meta">
-            <span className="about-card__company">Tecnólogo en Análisis y Desarrollo de Software</span>
-            <span className="about-card__date">SENA · 2023 – 2026</span>
+            <span className="about-card__company">Tecnología en Análisis y Desarrollo de Software</span>
+            <span className="about-card__company-sub">SENA (Servicio Nacional de Aprendizaje)</span>
+            <span className="about-card__date">2023 – 2026</span>
           </div>
           <ul className="about-list">
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Ciclo completo de desarrollo de software</span>
+              <span><strong>Ciclo Completo:</strong> Metodologías y fases del ciclo de vida completo de aplicaciones de software.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Metodologías ágiles e ingeniería de software</span>
+              <span><strong>Ingeniería de Software:</strong> Modelado de requisitos, patrones de diseño y buenas prácticas.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Bases de datos relacionales y NoSQL</span>
+              <span><strong>Bases de Datos:</strong> Diseño relacional, normalización, optimización de consultas y almacenamiento NoSQL.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Seguridad en aplicaciones web</span>
+              <span><strong>Desarrollo de Software:</strong> Construcción de proyectos web, móviles y empresariales.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Proyectos capstone con clientes reales</span>
+              <span><strong>Calidad:</strong> Pruebas unitarias, aseguramiento de la calidad del software e implantación.</span>
             </li>
           </ul>
         </article>
@@ -95,23 +100,23 @@ export default function About() {
           <ul className="about-list">
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Calidad de código y testing</span>
+              <span><strong>Versatilidad Técnica:</strong> Agilidad para trabajar en frontend, backend y móvil asegurando consistencia.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Comunicación clara y documentación</span>
+              <span><strong>Mentalidad de Producto:</strong> Foco en crear soluciones escalables que generen valor real para el usuario final.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Mentalidad de aprendizaje continuo</span>
+              <span><strong>Adaptabilidad y Aprendizaje:</strong> Adopción inmediata de nuevas tecnologías y resolución de problemas complejos.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Responsabilidad y profesionalismo</span>
+              <span><strong>Buenas Prácticas:</strong> Código limpio, modular, optimización de rendimiento y documentación exhaustiva.</span>
             </li>
             <li>
               <span className="about-list-bullet">✓</span>
-              <span>Pasión por resolver problemas</span>
+              <span><strong>Colaboración Eficiente:</strong> Comunicación transparente y asertiva en entornos ágiles multidisciplinarios.</span>
             </li>
           </ul>
         </article>

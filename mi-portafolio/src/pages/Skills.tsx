@@ -3,24 +3,24 @@ import { CodeBracketSquareIcon, CloudArrowUpIcon, ShieldCheckIcon, SparklesIcon 
 
 const skillSections = [
   {
-    title: 'Frontend',
+    title: 'Lenguajes de Programación',
     icon: CodeBracketSquareIcon,
-    items: ['React', 'TypeScript', 'Vite', 'HTML5', 'CSS3', 'Interfaces responsivas'],
+    items: ['TypeScript & JavaScript', 'Python', 'Dart (Flutter)', 'Java', 'C#', 'PHP'],
   },
   {
-    title: 'Backend',
+    title: 'Frameworks & Librerías',
     icon: CloudArrowUpIcon,
-    items: ['Node.js', 'Express', 'FastAPI', 'REST APIs', 'PostgreSQL', 'MongoDB'],
+    items: ['React (Hooks avanzados)', 'Next.js', 'Node.js & FastAPI', 'Flutter (Multiplataforma)', 'Laravel & .NET', 'Angular'],
   },
   {
-    title: 'Infra & DevOps',
+    title: 'Bases de Datos & Backend',
     icon: ShieldCheckIcon,
-    items: ['Docker', 'CI/CD', 'GitHub Actions', 'Vercel', 'Despliegue continuo', 'Monitoring'],
+    items: ['SQL (MySQL, PostgreSQL)', 'NoSQL (MongoDB)', 'Modelado de Bases de Datos', 'Administración y Optimización', 'Arquitectura de APIs RESTful'],
   },
   {
-    title: 'Experiencia & Producto',
+    title: 'Herramientas & DevOps',
     icon: SparklesIcon,
-    items: ['UX centrado en el usuario', 'Mobile-first', 'Accesibilidad', 'Performance', 'SEO básico', 'Feedback rápido'],
+    items: ['Docker (Contenedores)', 'Git, GitHub & GitLab', 'Vercel, Render & Postgres', 'Postman', 'Metodologías Ágiles (Scrum)', 'Nivel de Inglés B1'],
   },
 ]
 

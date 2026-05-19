@@ -11,11 +11,10 @@ export default function Home() {
             <SparklesIcon className="hero-badge-icon" />
             Desarrollador Full-Stack Junior
           </div>
-          <h2>Construyo interfaces hermosas y APIs robustas que escalan.</h2>
+          <h2>Construyo interfaces dinámicas y APIs robustas que escalan.</h2>
           <p>
-            Soy Darío, desarrollador apasionado por crear soluciones web y móviles de alta calidad.
-            Especializado en React, Node.js, TypeScript y arquitectura escalable.
-            Mi objetivo es transformar ideas en productos listos para el mercado.
+            Soy Rubén Darío, desarrollador Full-Stack Junior apasionado por crear soluciones web y móviles de alta calidad.
+            Especializado en interfaces reactivas con React, aplicaciones multiplataforma con Flutter/Dart y arquitecturas escalables con Node.js y FastAPI.
           </p>
           <div className="hero-actions">
             <Link className="primary-button" to="/contact">
@@ -28,13 +27,13 @@ export default function Home() {
           </div>
           <div className="hero-tags">
             <span>
-              <CheckCircleIcon className="tag-icon" /> Fullstack
+              <CheckCircleIcon className="tag-icon" /> Web & Móvil
             </span>
             <span>
-              <RocketLaunchIcon className="tag-icon" /> Escalable
+              <RocketLaunchIcon className="tag-icon" /> Full-Stack
             </span>
             <span>
-              <CodeBracketIcon className="tag-icon" /> Moderno
+              <CodeBracketIcon className="tag-icon" /> Docker / SQL
             </span>
           </div>
         </div>
@@ -43,21 +42,20 @@ export default function Home() {
           <div className="hero-card__content">
             <div className="hero-card__header">
               <div>
-                <p>Darío Salazar Cuero</p>
-                <span>Full-Stack Developer</span>
+                <p>Rubén Darío Salazar</p>
+                <span>Full-Stack Junior Developer</span>
               </div>
               <Icon icon="mdi:terminal" className="hero-card-icon" />
             </div>
             <div className="hero-card__body">
               <p>
-                Desarrollo aplicaciones web con React, crearé backends sólidos con Node.js,
-                y despliego en producción con confianza. Enfoque en código limpio y experiencia excepcional.
+                Desarrollo de software de extremo a extremo, desde el frontend web y móvil con React y Flutter, hasta backend robusto con APIs REST, optimización de bases de datos y DevOps.
               </p>
               <ul>
-                <li>React 19 + TypeScript</li>
-                <li>Node.js / FastAPI</li>
-                <li>PostgreSQL / MongoDB</li>
-                <li>Docker & CI/CD</li>
+                <li>React / Next.js (Hooks)</li>
+                <li>Flutter & Dart (Móvil)</li>
+                <li>Node.js / FastAPI (APIs)</li>
+                <li>SQL / MongoDB / Docker</li>
               </ul>
             </div>
           </div>
