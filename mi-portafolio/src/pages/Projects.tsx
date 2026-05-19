@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Icon } from '@iconify/react'
 import { LightBulbIcon } from '@heroicons/react/24/solid'
 import VerDetalle from '../modals/VerDetalle'
+import Pagination from '../components/Pagination'
 import projects from '../data/projects/index'
 
 export interface Project {
@@ -16,10 +17,13 @@ export interface Project {
   demo?: string
 }
 
+const PROJECTS_PER_PAGE = 3
+
 export default function Projects() {
   const [selected, setSelected] = useState<Project | null>(null)
   const [open, setOpen] = useState(false)
   const [filter, setFilter] = useState<string>('all')
+  const [currentPage, setCurrentPage] = useState(1)
 
   function openModal(p: Project) {
     setSelected(p)
@@ -31,10 +35,19 @@ export default function Projects() {
     setSelected(null)
   }
 
+  function handleFilterChange(newFilter: string) {
+    setFilter(newFilter)
+    setCurrentPage(1)
+  }
+
   const uniqueTags = Array.from(new Set(projects.flatMap((p) => p.tags || [])))
   const filteredProjects = filter === 'all' ? projects : projects.filter((p) => p.tags?.includes(filter))
 
-
+  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE)
+  const paginatedProjects = filteredProjects.slice(
+    (currentPage - 1) * PROJECTS_PER_PAGE,
+    currentPage * PROJECTS_PER_PAGE
+  )
 
   return (
     <section className="projects-page">
@@ -48,30 +61,35 @@ export default function Projects() {
       </div>
 
       {uniqueTags.length > 0 && (
-        <div className="projects-filter">
-          <button
-            className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
-            onClick={() => setFilter('all')}
-          >
-            Todos ({projects.length})
-          </button>
-          {uniqueTags.map((tag) => {
-            const count = projects.filter((p) => p.tags?.includes(tag)).length
-            return (
-              <button
-                key={tag}
-                className={`filter-btn ${filter === tag ? 'active' : ''}`}
-                onClick={() => setFilter(tag)}
-              >
-                {tag} ({count})
-              </button>
-            )
-          })}
+        <div className="projects-filter-container">
+          <label htmlFor="project-category-filter" className="filter-label">
+            <Icon icon="mdi:filter-variant" className="filter-icon-inline" />
+            <span>Filtrar por categoría:</span>
+          </label>
+          <div className="select-wrapper">
+            <select
+              id="project-category-filter"
+              value={filter}
+              onChange={(e) => handleFilterChange(e.target.value)}
+              className="premium-select"
+            >
+              <option value="all">Todos los proyectos ({projects.length})</option>
+              {uniqueTags.map((tag) => {
+                const count = projects.filter((p) => p.tags?.includes(tag)).length
+                return (
+                  <option key={tag} value={tag}>
+                    {tag} ({count})
+                  </option>
+                )
+              })}
+            </select>
+            <Icon icon="mdi:chevron-down" className="select-arrow" />
+          </div>
         </div>
       )}
 
       <div className="projects-grid">
-        {filteredProjects.map((p, idx) => (
+        {paginatedProjects.map((p, idx) => (
           <article key={p.title} className="project-card" style={{ animationDelay: `${idx * 0.1}s` }}>
             <div className="project-card__top">
               <div className="project-card__icon-wrapper">
@@ -100,11 +118,7 @@ export default function Projects() {
                 <span>Ver detalles</span>
                 <Icon icon="mdi:arrow-right" />
               </button>
-              {p.demo && (
-                <a href={p.demo} target="_blank" rel="noreferrer" className="project-link demo-btn">
-                  <Icon icon="mdi:external-link" />
-                </a>
-              )}
+
             </div>
           </article>
         ))}
@@ -116,6 +130,12 @@ export default function Projects() {
           <p>No hay proyectos en esta categoría aún.</p>
         </div>
       )}
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
 
       <VerDetalle open={open} onClose={closeModal} project={selected} />
     </section>

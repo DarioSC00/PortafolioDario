@@ -375,6 +375,17 @@
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--card-shadow);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover,
+.about-card:hover,
+.skill-card:hover,
+.dashboard-card:hover,
+.project-summary-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: 0 20px 50px rgba(56, 189, 248, 0.15), 0 0 0 1px rgba(56, 189, 248, 0.1);
 }
 
 .summary-card h3,
@@ -511,54 +522,161 @@
   font-size: 1.15rem;
   line-height: 1;
 }
-.projects-filter {
+/* Projects Premium Category Filter (Dropdown style) */
+.projects-filter-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 8px;
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  width: fit-content;
-  margin: 0 auto 36px;
-  backdrop-filter: blur(12px);
-  box-shadow: var(--card-shadow);
+  gap: 12px;
+  margin: 0 auto 40px;
+  width: 100%;
+  max-width: 320px;
 }
 
-.filter-btn {
-  padding: 10px 20px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
+.filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.filter-icon-inline {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.premium-select {
+  width: 100%;
+  padding: 14px 44px 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--card-shadow);
   outline: none;
 }
 
-.filter-btn:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.05);
+.premium-select:hover {
+  border-color: var(--accent-soft);
+  background: var(--surface);
   transform: translateY(-1px);
 }
 
-.filter-btn.active {
+.premium-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), var(--card-shadow);
+}
+
+.premium-select option {
+  background: var(--surface);
+  color: var(--text);
+  padding: 12px;
+  font-weight: 500;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--muted);
+  pointer-events: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.select-wrapper:hover .select-arrow {
+  color: var(--accent);
+}
+
+/* Universal Pagination Component Styles */
+.universal-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+.arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+}
+
+.arrow-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.number-btn {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 14px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+.pagination-btn:focus:not(:disabled) {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.pagination-btn.active {
   background: var(--accent);
   color: #ffffff;
   border-color: var(--accent);
   box-shadow: 0 8px 24px var(--accent-soft);
 }
 
-@media (max-width: 600px) {
-  .projects-filter {
-    border-radius: 20px;
-    width: 100%;
-    justify-content: space-around;
-  }
+.pagination-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .project-card {
