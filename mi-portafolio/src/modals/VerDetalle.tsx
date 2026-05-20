@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 
 type Project = {
-	title: string
+	title?: string
 	description?: string
 	longDescription?: string
 	features?: string[]

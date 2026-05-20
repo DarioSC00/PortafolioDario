@@ -1,54 +1,71 @@
 const repuestosSalazar = {
   title: 'Repuestos Salazar',
   description:
-    'Sistema de gestión de inventario y administración de repuestos automotrices (backend y prácticas full-stack).',
-  longDescription: `Descripción del Proyecto
+    'Sistema de gestión de inventario y administración de repuestos automotrices',
+  longDescription: `RepuestosSalazar es una plataforma administrativa diseñada para optimizar la gestión de inventario, productos y procesos comerciales de una empresa dedicada a la venta de repuestos automotrices.
 
-El proyecto BaseDeDatosRepuestosSalazar es un sistema de gestión de inventario y administración de repuestos automotrices desarrollado como una solución backend enfocada en el manejo eficiente de información empresarial.
+El sistema cuenta con una versión web administrativa y componentes móviles, permitiendo acceder y gestionar la información desde diferentes dispositivos, facilitando así la movilidad y el control operativo del negocio.
 
-La aplicación implementa operaciones CRUD para administrar entidades como:
+Entre las funcionalidades principales del proyecto se incluyen:
 
-Productos y repuestos
-Categorías
-Proveedores
-Clientes
-Inventario
-Ventas o movimientos de stock
+Gestión de productos y repuestos
+Administración de inventario
+Registro y control de proveedores
+Manejo de clientes
+Operaciones CRUD completas
+Consultas dinámicas de información
+Validaciones y manejo de formularios
+Navegación y módulos administrativos
+Integración frontend-backend
+Acceso multiplataforma (web y móvil)
 
-El sistema está construido bajo una arquitectura organizada tipo MVC (Modelo-Vista-Controlador), utilizando tecnologías como:
+El proyecto implementa una arquitectura organizada y modular basada en:
+
+Modelos
+Rutas
+Controladores
+Servicios
+APIs REST
+
+Las tecnologías utilizadas incluyen:
 
 Node.js
-Express
-MongoDB
-Visual Studio Code
+Express.js
+MongoDB / Mongoose
+JavaScript
+HTML5
+CSS3
+Bootstrap
+Angular (en algunos módulos frontend)
+Tecnologías móviles híbridas o frontend móvil
+Git y GitHub
 
-El proyecto busca optimizar el control de inventario y la organización de datos dentro de una empresa de repuestos, permitiendo registrar, consultar, actualizar y eliminar información de manera estructurada y segura.
+Basado en el historial de tus proyectos, este sistema también refleja experiencia en:
 
-Entre las funcionalidades principales del sistema se incluyen:
+Desarrollo de aplicaciones empresariales escalables
+Integración de bases de datos
+Desarrollo móvil y responsive
+Arquitectura MVC
+Consumo de APIs
+Gestión de inventarios
+Interfaces administrativas dinámicas
+Desarrollo Full-Stack moderno
 
-Gestión de inventario de repuestos
-Registro de proveedores y clientes
-Administración de categorías
-Manejo de estados y disponibilidad de productos
-Consultas dinámicas de información
-Integración con base de datos mediante modelos y controladores
-Organización modular del backend
+Además, el proyecto demuestra habilidades en:
 
-Además, el proyecto sirve como práctica de desarrollo full-stack y fortalecimiento de conocimientos en:
-
-Diseño de APIs REST
-Conexión y modelado de bases de datos
-Arquitectura backend
-Manejo de rutas y controladores
-Desarrollo escalable de aplicaciones empresariales`,
+Separación de responsabilidades
+Organización modular del código
+Desarrollo de interfaces intuitivas
+Manejo de datos en tiempo real
+Construcción de soluciones empresariales multiplataforma`,
   features: [
     'Operaciones CRUD para productos, proveedores y clientes',
     'Gestión de inventario y movimientos de stock',
     'Modelado de datos en MongoDB con esquemas claros',
     'Rutas y controladores organizados bajo MVC',
   ],
-  techStack: ['Node.js', 'Express', 'MongoDB', 'Mongoose'],
-  tags: ['Node.js', 'Backend', 'MongoDB'],
+  techStack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'TypeScript', 'React', 'React Router', 'Vite', 'CSS Modules', 'HTML5', 'Tailwind', 'JavaScript', 'Flutter', 'PostgreSQL'],
+  tags: ['  Node.js', 'Backend', 'MongoDB', 'TypeScript', 'React', 'React Router', 'Vite', 'CSS Modules', 'HTML5', 'Tailwind', 'JavaScript', 'Flutter', 'PostgreSQL'],
   banner: '/repuestos_salazar.png',
   repo: 'https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar',
   demo: '',

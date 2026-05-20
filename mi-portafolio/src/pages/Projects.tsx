@@ -6,7 +6,7 @@ import Pagination from '../components/Pagination'
 import projects from '../data/projects/index'
 
 export interface Project {
-  title: string
+  title?: string
   description?: string
   longDescription?: string
   features?: string[]
@@ -40,8 +40,9 @@ export default function Projects() {
     setCurrentPage(1)
   }
 
-  const uniqueTags = Array.from(new Set(projects.flatMap((p) => p.tags || [])))
-  const filteredProjects = filter === 'all' ? projects : projects.filter((p) => p.tags?.includes(filter))
+  const typedProjects = projects as Project[]
+  const uniqueTags = Array.from(new Set(typedProjects.flatMap((p) => p.tags || [])))
+  const filteredProjects = filter === 'all' ? typedProjects : typedProjects.filter((p) => p.tags?.includes(filter))
 
   const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE)
   const paginatedProjects = filteredProjects.slice(
@@ -73,9 +74,9 @@ export default function Projects() {
               onChange={(e) => handleFilterChange(e.target.value)}
               className="premium-select"
             >
-              <option value="all">Todos los proyectos ({projects.length})</option>
+              <option value="all">Todos los proyectos ({typedProjects.length})</option>
               {uniqueTags.map((tag) => {
-                const count = projects.filter((p) => p.tags?.includes(tag)).length
+                const count = typedProjects.filter((p) => p.tags?.includes(tag)).length
                 return (
                   <option key={tag} value={tag}>
                     {tag} ({count})
@@ -104,7 +105,7 @@ export default function Projects() {
 
               {p.tags && (
                 <div className="project-tags">
-                  {p.tags.map((t) => (
+                  {p.tags.map((t: string) => (
                     <span key={t} className="project-tag">
                       {t}
                     </span>
