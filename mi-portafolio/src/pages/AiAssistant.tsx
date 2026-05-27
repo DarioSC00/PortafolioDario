@@ -102,7 +102,7 @@ export default function AiAssistant() {
   const [showConfig, setShowConfig] = useState(false)
   const [apiKey, setApiKey] = useState('')
 
-  const chatEndRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
 
   // Initialize and load theme/credentials
   useEffect(() => {
@@ -127,9 +127,14 @@ export default function AiAssistant() {
     setActiveRole(defaultRole)
   }, [])
 
-  // Auto-scroll chat to bottom
+  // Auto-scroll chat container to bottom smoothly
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      })
+    }
   }, [messages, isTyping])
 
   // Handle compatibility selection with temporary calculating state for aesthetic impact
@@ -357,7 +362,7 @@ export default function AiAssistant() {
             </div>
           </div>
 
-          <div className="chat-conversation-log">
+          <div ref={chatContainerRef} className="chat-conversation-log">
             {messages.map((msg) => (
               <div key={msg.id} className={`chat-bubble-row ${msg.sender}`}>
                 <div className="chat-bubble">
@@ -388,7 +393,6 @@ export default function AiAssistant() {
                 </div>
               </div>
             )}
-            <div ref={chatEndRef} />
           </div>
 
           <div className="chat-suggestions-chips">
