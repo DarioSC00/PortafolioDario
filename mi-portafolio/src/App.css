@@ -199,6 +199,7 @@
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
   gap: 30px;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .hero-copy {
@@ -295,6 +296,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-bottom: 22px;
 }
 
 @media (max-width: 900px) {
@@ -488,6 +490,38 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+.about-achievements {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--card-shadow);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.achievement-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.06);
+}
+
+.achievement-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+}
+
 .about-card__icon-wrapper {
   display: grid;
   place-items: center;
@@ -534,6 +568,37 @@
 
 .skill-card {
   min-height: 220px;
+}
+
+.skill-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.skill-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px;
+  border-radius: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+}
+
+.skill-highlight__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .skill-card__head {
@@ -756,6 +821,24 @@
   border-radius: 28px;
   padding: 24px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: visible;
+}
+
+.project-card__footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  overflow: visible;
+}
+
+.project-link {
+  justify-self: start;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  overflow: visible;
+  position: relative;
 }
 
 .project-card:hover {
@@ -1651,12 +1734,16 @@
 .summary-card,
 .about-card,
 .skill-card,
-.project-card,
 .contact-card,
 .dashboard-card,
 .project-summary-card {
   position: relative;
   overflow: hidden;
+}
+
+.project-card {
+  position: relative;
+  overflow: visible;
 }
 
 .summary-card::after,
@@ -1710,6 +1797,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(6px) scale(0.95);
   padding: 8px 12px;
+  z-index: 10000;
   background: rgba(10, 18, 34, 0.94);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -2386,7 +2474,7 @@
 }
 
 .chat-text-line strong {
-  color: #fff;
+  color: inherit;
   font-weight: 700;
 }
 
