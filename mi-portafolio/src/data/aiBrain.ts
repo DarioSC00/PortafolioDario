@@ -79,7 +79,7 @@ Un backend de grado de producción seguro y escalable para la gestión empresari
   - Documentación interactiva autogenerada con Swagger/OpenAPI.
   - Manejo centralizado de excepciones y registro de logs de auditoría.
 - **Repositorio:** Disponible en [GitHub](https://github.com/DarioSC00/express-enterprise-api)
-- **Demo Documentación:** [Swagger Docs en Render](https://api-dario.render.com/docs)`
+- **Demo Documentación:** [API en Render](https://basededatosrepuestossalazar-1.onrender.com)`
   },
   {
     keywords: ['tablero de trabajo', 'tablerodetrabajo', 'trello', 'kanban', 'tareas'],
@@ -107,7 +107,7 @@ Una aplicación web interactiva que consume la API pública de GitHub para busca
 Darío cuenta con varios proyectos listos para producción. Aquí los principales:
 
 1. **Repuestos Salazar:** Sistema Full-Stack y Móvil (Flutter/React/Node/MongoDB) para inventario automotriz. [GitHub](https://github.com/DarioSC00/RepuestosSalazar.git)
-2. **API RESTful Empresarial:** Backend ultra seguro (Node/Express/MongoDB/JWT/RBAC) con documentación Swagger. [Demo en Render](https://api-dario.render.com/docs)
+2. **API RESTful Empresarial:** Backend ultra seguro (Node/Express/MongoDB/JWT/RBAC) con documentación Swagger. [Demo en Render](https://basededatosrepuestossalazar-1.onrender.com)
 3. **Proyecto TeoSoft:** Panel administrativo completo (React/TypeScript/Node/MongoDB) con formularios modales y CRUD. [GitHub](https://github.com/Andreacetre/Proyecto-TeoSoft.git)
 4. **Tablero de Trabajo:** Kanban interactivo implementado con Drag and Drop en Vanilla JS. [GitHub](https://github.com/DarioSC00/PruebaTecnicaLynxus.git)
 5. **Reto Angular:** Buscador dinámico de perfiles y repositorios de GitHub con Angular. [GitHub](https://github.com/DarioSC00/RetoVideoTutorial.git)`
@@ -215,7 +215,7 @@ Información oficial de Rubén Darío Salazar:
 
 Proyectos Principales:
 1. "Repuestos Salazar" (Flutter/React/Node/MongoDB): Gestión de inventario automotriz web y móvil. Repo: https://github.com/DarioSC00/RepuestosSalazar.git
-2. "API RESTful Empresarial" (Node/Express/MongoDB/Swagger/JWT/RBAC): Backend robusto y seguro de grado corporativo. Repo: https://github.com/DarioSC00/express-enterprise-api | Demo Docs: https://api-dario.render.com/docs
+2. "API RESTful Empresarial" (Node/Express/MongoDB/Swagger/JWT/RBAC): Backend robusto y seguro de grado corporativo. Repo: https://github.com/DarioSC00/express-enterprise-api | Demo Docs: https://basededatosrepuestossalazar-1.onrender.com
 3. "Proyecto TeoSoft" (React/TS/Node/MongoDB): ERP/Administración con CRUD modales y tablas interactivas. Repo: https://github.com/Andreacetre/Proyecto-TeoSoft.git
 4. "Tablero de Trabajo" (Vanilla JS/Drag & Drop): Kanban inspirado en Trello. Repo: https://github.com/DarioSC00/PruebaTecnicaLynxus.git
 5. "Reto Angular" (Angular/GitHub API): Buscador dinámico de perfiles. Repo: https://github.com/DarioSC00/RetoVideoTutorial.git

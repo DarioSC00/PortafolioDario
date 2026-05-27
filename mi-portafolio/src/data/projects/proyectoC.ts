@@ -22,7 +22,7 @@ Entre las funcionalidades principales se incluyen:
   techStack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'Swagger'],
   tags: ['API', 'Backend', 'Security'],
   repo: 'https://github.com/DarioSC00/express-enterprise-api',
-  demo: 'https://api-dario.render.com/docs',
+  demo: 'https://basededatosrepuestossalazar-1.onrender.com',
   banner: '/api_empresarial.png',
 }
 

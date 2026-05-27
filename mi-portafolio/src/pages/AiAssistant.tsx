@@ -44,7 +44,7 @@ const ROLE_PROFILES: RoleProfile[] = [
       'Familiaridad con Docker para contenerización de entornos de desarrollo y despliegues.',
     ],
     recommendedProjects: [
-      { title: 'API RESTful Empresarial', repo: 'https://github.com/DarioSC00/express-enterprise-api', demo: 'https://api-dario.render.com/docs' }
+      { title: 'API RESTful Empresarial', repo: 'https://github.com/DarioSC00/express-enterprise-api', demo: 'https://basededatosrepuestossalazar-1.onrender.com' }
     ]
   },
   {
