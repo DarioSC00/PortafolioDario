@@ -10,6 +10,8 @@ import {
   ChartBarIcon,
   MoonIcon,
   SunIcon,
+  Bars3Icon,
+  XMarkIcon,
 } from '@heroicons/react/24/solid'
 import { Icon } from '@iconify/react'
 
@@ -28,6 +30,7 @@ const linkClasses = ({ isActive }: { isActive: boolean }) =>
 
 export default function DefaultLayout() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const saved = localStorage.getItem('theme') as 'light' | 'dark' | null
@@ -36,6 +39,14 @@ export default function DefaultLayout() {
     setTheme(initialTheme)
     document.documentElement.classList.toggle('light-theme', initialTheme === 'light')
   }, [])
+
+  function toggleMenu() {
+    setMenuOpen((current) => !current)
+  }
+
+  function closeMenu() {
+    setMenuOpen(false)
+  }
 
   function toggleTheme() {
     const nextTheme = theme === 'dark' ? 'light' : 'dark'
@@ -76,7 +87,20 @@ export default function DefaultLayout() {
           </div>
         </div>
 
-        <nav className="navbar" aria-label="Menú principal">
+        <div className="navbar-control">
+          <button
+            type="button"
+            className="navbar-toggle"
+            onClick={toggleMenu}
+            aria-controls="main-navigation"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <XMarkIcon className="navbar-toggle-icon" /> : <Bars3Icon className="navbar-toggle-icon" />}
+            <span>{menuOpen ? 'Cerrar menú' : 'Menú'}</span>
+          </button>
+        </div>
+
+        <nav id="main-navigation" className={`navbar${menuOpen ? ' open' : ''}`} aria-label="Menú principal">
           {navItems.map((item) => {
             const IconComponent = item.icon
             return (
@@ -85,6 +109,7 @@ export default function DefaultLayout() {
                 to={item.to}
                 className={linkClasses}
                 data-tooltip={`Ir a ${item.label}`}
+                onClick={closeMenu}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', position: 'relative' }}>
                   <IconComponent className="nav-icon" />

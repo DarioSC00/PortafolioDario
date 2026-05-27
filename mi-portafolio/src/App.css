@@ -84,6 +84,45 @@
   justify-content: center;
 }
 
+.navbar-control {
+  display: none;
+}
+
+.navbar-toggle {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 12px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.navbar-toggle-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.navbar.open {
+  max-height: 1000px;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
 .nav-link {
   display: inline-flex;
   align-items: center;
@@ -256,6 +295,36 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .navbar-control {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .navbar.open {
+    max-height: 1000px;
+  }
+
+  .navbar .nav-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-toggle {
+    width: auto;
+    justify-content: center;
+  }
 }
 
 .hero-tags span {
