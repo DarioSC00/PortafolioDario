@@ -6,6 +6,7 @@ import Projects from '../pages/Projects'
 import Dashboard from '../pages/Dashboard'
 import Contact from '../pages/Contact'
 import NotFound from '../pages/NotFound'
+import AiAssistant from '../pages/AiAssistant'
 
 
 
@@ -20,6 +21,7 @@ export const routes = [
       { path: 'projects', element: <Projects /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'contact', element: <Contact /> },
+      { path: 'copiloto-ia', element: <AiAssistant /> },
       { path: '*', element: <NotFound /> },
     ],
   },

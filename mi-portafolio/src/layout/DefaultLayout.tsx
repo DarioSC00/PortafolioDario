@@ -19,6 +19,7 @@ const navItems = [
   { to: '/about', label: 'Acerca de', icon: UserCircleIcon },
   { to: '/skills', label: 'Habilidades', icon: SparklesIcon },
   { to: '/projects', label: 'Proyectos', icon: BriefcaseIcon }, 
+  { to: '/copiloto-ia', label: 'Copiloto IA', icon: BoltIcon, isNew: true },
   { to: '/contact', label: 'Contacto', icon: EnvelopeIcon },
 ]
 
@@ -85,8 +86,13 @@ export default function DefaultLayout() {
                 className={linkClasses}
                 data-tooltip={`Ir a ${item.label}`}
               >
-                <IconComponent className="nav-icon" />
-                <span>{item.label}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', position: 'relative' }}>
+                  <IconComponent className="nav-icon" />
+                  <span>{item.label}</span>
+                  {item.isNew && (
+                    <span className="navbar-new-badge">IA</span>
+                  )}
+                </div>
               </NavLink>
             )
           })}
