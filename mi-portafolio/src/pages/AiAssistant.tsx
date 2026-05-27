@@ -23,13 +23,14 @@ const ROLE_PROFILES: RoleProfile[] = [
     score: 98,
     skills: ['React Hooks avanzados', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vite', 'HTML5/CSS3'],
     reasons: [
-      'Dominio de hooks avanzados, enrutamiento con React Router y gestión de estados fluidos.',
+      'Los mejores proyectos de frontend son Repuestos Salazar, TeoSoft y Tablero de Trabajo.',
       'Amplia experiencia maquetando interfaces modernas, accesibles, adaptables y responsivas.',
       'Sólido conocimiento en TypeScript para desarrollo seguro y arquitectura escalable.',
     ],
     recommendedProjects: [
+      { title: 'Repuestos Salazar', repo: 'https://github.com/DarioSC00/RepuestosSalazar.git' },
       { title: 'Proyecto TeoSoft (colaborador)', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' },
-      { title: 'Reto Angular (GitHub Search)', repo: 'https://github.com/DarioSC00/RetoVideoTutorial.git' }
+      { title: 'Tablero de Trabajo', repo: 'https://github.com/DarioSC00/PruebaTecnicaLynxus.git' }
     ]
   },
   {
