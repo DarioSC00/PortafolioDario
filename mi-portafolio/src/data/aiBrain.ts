@@ -54,7 +54,7 @@ Es una plataforma integral (versión web administrativa y componentes móviles) 
 - **Frontend:** React, React Router, Vite, Tailwind CSS y módulos móviles híbridos con **Flutter/Dart**.
 - **Backend:** Node.js, Express, MongoDB con modelado Mongoose, PostgreSQL.
 - **Funcionalidades:** CRUD completo de productos, proveedores y clientes; control de movimientos de stock en tiempo real; interfaces administrativas fluidas.
-- **Código:** Puedes ver el repositorio de la base de datos en [GitHub](https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar).`
+- **Código:** Puedes ver el repositorio en [GitHub](https://github.com/DarioSC00/RepuestosSalazar.git).`
   },
   {
     keywords: ['teosoft', 'teo soft', 'gestion administrativa'],
@@ -88,7 +88,8 @@ Un backend de grado de producción seguro y escalable para la gestión empresari
 Un gestor de tareas visual e interactivo inspirado en Trello, ideal para la productividad y organización de equipos.
 
 - **Stack:** HTML5, CSS3, JavaScript puro (Vanilla JS), Drag and Drop API nativa.
-- **Funcionalidades:** Creación, edición y eliminación de tareas; organización en columnas de estado; persistencia de datos local; movimiento de tareas fluido por arrastre (Drag & Drop).`
+- **Funcionalidades:** Creación, edición y eliminación de tareas; organización en columnas de estado; persistencia de datos local; movimiento de tareas fluido por arrastre (Drag & Drop).
+- **Código:** Puedes ver el repositorio en [GitHub](https://github.com/DarioSC00/PruebaTecnicaLynxus.git).`
   },
   {
     keywords: ['reto angular', 'retoangular', 'angular', 'github search'],
@@ -105,11 +106,11 @@ Una aplicación web interactiva que consume la API pública de GitHub para busca
 
 Darío cuenta con varios proyectos listos para producción. Aquí los principales:
 
-1. **Repuestos Salazar:** Sistema Full-Stack y Móvil (Flutter/React/Node/MongoDB) para inventario automotriz. [GitHub](https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar)
+1. **Repuestos Salazar:** Sistema Full-Stack y Móvil (Flutter/React/Node/MongoDB) para inventario automotriz. [GitHub](https://github.com/DarioSC00/RepuestosSalazar.git)
 2. **API RESTful Empresarial:** Backend ultra seguro (Node/Express/MongoDB/JWT/RBAC) con documentación Swagger. [Demo en Render](https://api-dario.render.com/docs)
-3. **Proyecto TeoSoft:** Panel administrativo completo (React/TypeScript/Node/MongoDB) con formularios modales y CRUD.
-4. **Tablero de Trabajo:** Kanban interactivo implementado con Drag and Drop en Vanilla JS.
-5. **Reto Angular:** Buscador dinámico de perfiles y repositorios de GitHub con Angular.`
+3. **Proyecto TeoSoft:** Panel administrativo completo (React/TypeScript/Node/MongoDB) con formularios modales y CRUD. [GitHub](https://github.com/Andreacetre/Proyecto-TeoSoft.git)
+4. **Tablero de Trabajo:** Kanban interactivo implementado con Drag and Drop en Vanilla JS. [GitHub](https://github.com/DarioSC00/PruebaTecnicaLynxus.git)
+5. **Reto Angular:** Buscador dinámico de perfiles y repositorios de GitHub con Angular. [GitHub](https://github.com/DarioSC00/RetoVideoTutorial.git)`
   },
   {
     keywords: ['ingles', 'english', 'b1', 'idioma', 'habla'],
@@ -213,11 +214,11 @@ Información oficial de Rubén Darío Salazar:
 - Disponibilidad: Inmediata para contratación o proyectos freelance.
 
 Proyectos Principales:
-1. "Repuestos Salazar" (Flutter/React/Node/MongoDB): Gestión de inventario automotriz web y móvil. Repo: https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar
+1. "Repuestos Salazar" (Flutter/React/Node/MongoDB): Gestión de inventario automotriz web y móvil. Repo: https://github.com/DarioSC00/RepuestosSalazar.git
 2. "API RESTful Empresarial" (Node/Express/MongoDB/Swagger/JWT/RBAC): Backend robusto y seguro de grado corporativo. Repo: https://github.com/DarioSC00/express-enterprise-api | Demo Docs: https://api-dario.render.com/docs
 3. "Proyecto TeoSoft" (React/TS/Node/MongoDB): ERP/Administración con CRUD modales y tablas interactivas. Repo: https://github.com/Andreacetre/Proyecto-TeoSoft.git
-4. "Tablero de Trabajo" (Vanilla JS/Drag & Drop): Kanban inspirado en Trello.
-5. "Reto Angular" (Angular/GitHub API): Buscador dinámico de perfiles.
+4. "Tablero de Trabajo" (Vanilla JS/Drag & Drop): Kanban inspirado en Trello. Repo: https://github.com/DarioSC00/PruebaTecnicaLynxus.git
+5. "Reto Angular" (Angular/GitHub API): Buscador dinámico de perfiles. Repo: https://github.com/DarioSC00/RetoVideoTutorial.git
 
 Reglas de comportamiento:
 - Habla siempre en tercera persona sobre Rubén Darío (ej: "Darío diseñó...", "Él domina...").

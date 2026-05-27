@@ -29,7 +29,7 @@ const ROLE_PROFILES: RoleProfile[] = [
     ],
     recommendedProjects: [
       { title: 'Proyecto TeoSoft', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' },
-      { title: 'Reto Angular (GitHub Search)', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' }
+      { title: 'Reto Angular (GitHub Search)', repo: 'https://github.com/DarioSC00/RetoVideoTutorial.git' }
     ]
   },
   {
@@ -59,7 +59,7 @@ const ROLE_PROFILES: RoleProfile[] = [
       'Desarrollo de módulos integrados a sistemas administrativos mayores (como en Repuestos Salazar).',
     ],
     recommendedProjects: [
-      { title: 'Repuestos Salazar (Web/Mobile)', repo: 'https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar' }
+      { title: 'Repuestos Salazar (Web/Mobile)', repo: 'https://github.com/DarioSC00/RepuestosSalazar.git' }
     ]
   },
   {
@@ -74,8 +74,9 @@ const ROLE_PROFILES: RoleProfile[] = [
       'Mentalidad de producto enfocada en resolver problemas reales de extremo a extremo.',
     ],
     recommendedProjects: [
-      { title: 'Repuestos Salazar', repo: 'https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar' },
-      { title: 'Proyecto TeoSoft', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' }
+      { title: 'Repuestos Salazar', repo: 'https://github.com/DarioSC00/RepuestosSalazar.git' },
+      { title: 'Proyecto TeoSoft', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' },
+      { title: 'Tablero de Trabajo', repo: 'https://github.com/DarioSC00/PruebaTecnicaLynxus.git' }
     ]
   }
 ]
@@ -91,7 +92,7 @@ export default function AiAssistant() {
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [inputVal, setInputVal] = useState('')
   const [isTyping, setIsTyping] = useState(false)
-  
+
   // Compatibility Matchmaker states
   const [selectedRoleId, setSelectedRoleId] = useState<string>('fullstack')
   const [isCalculating, setIsCalculating] = useState(false)
@@ -136,7 +137,7 @@ export default function AiAssistant() {
     if (id === selectedRoleId) return
     setSelectedRoleId(id)
     setIsCalculating(true)
-    
+
     setTimeout(() => {
       const role = ROLE_PROFILES.find(r => r.id === id) || null
       setActiveRole(role)
@@ -213,7 +214,7 @@ export default function AiAssistant() {
     let formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>')
     formatted = formatted.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="chat-link inline-flex items-center gap-1">$1 <span class="chat-link-icon">↗</span></a>')
-    
+
     return formatted.split('\n').map((line, i) => (
       <span key={i} className="chat-text-line">
         <span dangerouslySetInnerHTML={{ __html: line }} />

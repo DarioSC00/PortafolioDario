@@ -67,7 +67,7 @@ Construcción de soluciones empresariales multiplataforma`,
   techStack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'TypeScript', 'React', 'React Router', 'Vite', 'CSS Modules', 'HTML5', 'Tailwind', 'JavaScript', 'Flutter', 'PostgreSQL'],
   tags: ['  Node.js', 'Backend', 'MongoDB', 'TypeScript', 'React', 'React Router', 'Vite', 'CSS Modules', 'HTML5', 'Tailwind', 'JavaScript', 'Flutter', 'PostgreSQL'],
   banner: '/repuestos_salazar.png',
-  repo: 'https://github.com/DarioSC00/BaseDeDatosRepuestosSalazar',
+  repo: 'https://github.com/DarioSC00/RepuestosSalazar.git',
   demo: '',
 }
 
