@@ -28,7 +28,7 @@ const ROLE_PROFILES: RoleProfile[] = [
       'Sólido conocimiento en TypeScript para desarrollo seguro y arquitectura escalable.',
     ],
     recommendedProjects: [
-      { title: 'Proyecto TeoSoft', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' },
+      { title: 'Proyecto TeoSoft (colaborador)', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' },
       { title: 'Reto Angular (GitHub Search)', repo: 'https://github.com/DarioSC00/RetoVideoTutorial.git' }
     ]
   },
@@ -75,7 +75,7 @@ const ROLE_PROFILES: RoleProfile[] = [
     ],
     recommendedProjects: [
       { title: 'Repuestos Salazar', repo: 'https://github.com/DarioSC00/RepuestosSalazar.git' },
-      { title: 'Proyecto TeoSoft', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' },
+      { title: 'Proyecto TeoSoft (colaborador)', repo: 'https://github.com/Andreacetre/Proyecto-TeoSoft.git' },
       { title: 'Tablero de Trabajo', repo: 'https://github.com/DarioSC00/PruebaTecnicaLynxus.git' }
     ]
   }
