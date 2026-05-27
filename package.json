@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "vite-plugin-spa": "^0.0.1"
+  }
+}

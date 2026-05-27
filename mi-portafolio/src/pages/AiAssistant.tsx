@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-import { SparklesIcon, CheckCircleIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
+import { SparklesIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 import { Icon } from '@iconify/react'
-import { getSimulatedResponse, getGeminiResponse } from '../data/aiBrain'
+import { getSimulatedResponse } from '../data/aiBrain'
 import type { ChatMessage } from '../data/aiBrain'
 
 // Roles list for the compatibility matchmaker
@@ -37,7 +37,7 @@ const ROLE_PROFILES: RoleProfile[] = [
     name: 'Backend Developer (Node / Python)',
     icon: 'mdi:server-network',
     score: 96,
-    skills: ['Node.js (Express)', 'FastAPI & Python', 'Bases de Datos SQL & NoSQL', 'Docker', 'Seguridad JWT/RBAC'],
+    skills: ['Node.js (Express)', 'FastAPI & Python', 'Bases de Datos SQL & NoSQL', 'Docker', 'Seguridad JWT/RBAC', 'Principios SOLID'],
     reasons: [
       'Experiencia real en Lynxus (EPAM) diseñando y consumiendo APIs RESTful altamente seguras.',
       'Modelado avanzado y optimización de consultas en PostgreSQL, MySQL y esquemas MongoDB.',
@@ -67,7 +67,7 @@ const ROLE_PROFILES: RoleProfile[] = [
     name: 'Full-Stack Developer (Generalist)',
     icon: 'mdi:code-braces-box',
     score: 97,
-    skills: ['React / TS', 'Node.js / Express', 'FastAPI & Python', 'Flutter (Móvil)', 'Bases de Datos & Docker', 'Scrum / Git'],
+    skills: ['React / TS', 'Node.js / Express', 'FastAPI & Python', 'Flutter (Móvil)', 'Bases de Datos & Docker', 'Scrum / Git', 'Principios SOLID'],
     reasons: [
       'Habilidad excepcional para conectar arquitecturas backend robustas con interfaces dinámicas.',
       'Práctica profesional (Lynxus/EPAM) y formación técnica del SENA avalan su polivalencia.',
@@ -99,9 +99,6 @@ export default function AiAssistant() {
   const [activeRole, setActiveRole] = useState<RoleProfile | null>(null)
 
   // Gemini API Key config states
-  const [showConfig, setShowConfig] = useState(false)
-  const [apiKey, setApiKey] = useState('')
-
   const chatContainerRef = useRef<HTMLDivElement>(null)
 
   // Initialize and load theme/credentials
@@ -115,12 +112,6 @@ export default function AiAssistant() {
         timestamp: new Date()
       }
     ])
-
-    // Load saved API Key if any
-    const savedKey = localStorage.getItem('dario_gemini_api_key')
-    if (savedKey) {
-      setApiKey(savedKey)
-    }
 
     // Set default active role matching Full-Stack
     const defaultRole = ROLE_PROFILES.find(r => r.id === 'fullstack') || null
@@ -180,38 +171,18 @@ export default function AiAssistant() {
     // A small dynamic thinking delay for realistic pacing (300ms to 700ms)
     await new Promise(resolve => setTimeout(resolve, 500))
 
-    let replyText = ''
-    if (apiKey.trim()) {
-      // Use real Gemini API
-      replyText = await getGeminiResponse(apiKey.trim(), text, messages)
-    } else {
-      // Use local simulator
-      replyText = getSimulatedResponse(text)
-    }
+    const replyText = getSimulatedResponse(text)
 
     const assistantMsg: ChatMessage = {
       id: Math.random().toString(),
       sender: 'assistant',
       text: replyText,
       timestamp: new Date(),
-      isSimulated: !apiKey.trim()
+      isSimulated: true
     }
 
     setMessages(prev => [...prev, assistantMsg])
     setIsTyping(false)
-  }
-
-  // Save API Key locally
-  function saveApiKey() {
-    localStorage.setItem('dario_gemini_api_key', apiKey.trim())
-    alert('Clave guardada localmente de manera segura en tu navegador.')
-  }
-
-  // Clear API Key
-  function clearApiKey() {
-    localStorage.removeItem('dario_gemini_api_key')
-    setApiKey('')
-    alert('Clave eliminada. El asistente volverá al modo simulación local.')
   }
 
   // Lightweight HTML-safe parser for basic Markdown syntax
@@ -352,11 +323,7 @@ export default function AiAssistant() {
             <div>
               <div className="chat-title-row">
                 <h3>Darío-AI Copilot</h3>
-                {!apiKey.trim() ? (
-                  <span className="brain-mode-chip local">Simulador Local</span>
-                ) : (
-                  <span className="brain-mode-chip gemini">Gemini En Vivo</span>
-                )}
+                <span className="brain-mode-chip local">Simulador Local</span>
               </div>
               <p className="panel-subtitle">Resolviendo tus dudas técnicas en tiempo real</p>
             </div>
@@ -423,51 +390,6 @@ export default function AiAssistant() {
               <Icon icon="mdi:send" className="send-icon" />
             </button>
           </form>
-
-          {/* Gemini API Key configuration panel */}
-          <div className="gemini-config-drawer">
-            <button
-              type="button"
-              className="drawer-toggle"
-              onClick={() => setShowConfig(!showConfig)}
-            >
-              <Icon icon="mdi:cog" className="drawer-icon" />
-              <span>{showConfig ? 'Ocultar Panel de Configuración IA' : 'Configurar Gemini Real (Opcional)'}</span>
-            </button>
-
-            {showConfig && (
-              <div className="drawer-body">
-                <p>
-                  Por seguridad, tu API Key se guarda únicamente de forma local en tu propio navegador (`localStorage`).
-                  Al conectarla, el chat se conectará en vivo con la inteligencia artificial real de Google (`gemini-2.5-flash`).
-                </p>
-                <div className="api-key-input-row">
-                  <input
-                    type="password"
-                    placeholder="Pega tu Gemini API Key aquí..."
-                    value={apiKey}
-                    onChange={(e) => setApiKey(e.target.value)}
-                  />
-                  <div className="api-actions">
-                    <button type="button" onClick={saveApiKey} className="btn-save-key">
-                      Guardar
-                    </button>
-                    {localStorage.getItem('dario_gemini_api_key') && (
-                      <button type="button" onClick={clearApiKey} className="btn-clear-key">
-                        Desconectar
-                      </button>
-                    )}
-                  </div>
-                </div>
-                <div className="drawer-instructions">
-                  <span>¿No tienes una? Consíguela gratis en </span>
-                  <a href="https://aistudio.google.com/" target="_blank" rel="noreferrer">
-                    Google AI Studio <ArrowTopRightOnSquareIcon className="link-ext-icon" />
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </section>
