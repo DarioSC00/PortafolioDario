@@ -154,11 +154,11 @@
 .page-content {
   position: relative;
   z-index: 10;
-  flex: 1;
   padding: clamp(36px, 4vw, 60px) clamp(20px, 4vw, 64px);
   display: flex;
   flex-direction: column;
   gap: 40px;
+  flex: 1;
 }
 
 .section-intro {
@@ -934,7 +934,6 @@
 }
 
 .app-footer {
-  margin-top: auto;
   padding: 24px clamp(20px, 4vw, 48px);
   display: flex;
   flex-wrap: wrap;
@@ -942,6 +941,7 @@
   gap: 14px;
   border-top: 1px solid var(--border);
   color: var(--muted);
+  margin-top: auto;
 }
 
 .footer-links {

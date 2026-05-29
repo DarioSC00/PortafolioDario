@@ -2,6 +2,7 @@
   color-scheme: dark;
   --bg: #05070f;
   --body-bg: radial-gradient(circle at top, rgba(56, 189, 248, 0.06), transparent 25%), radial-gradient(circle at 20% 10%, rgba(167, 139, 250, 0.08), transparent 18%), linear-gradient(180deg, #08101f 0%, #05070f 58%, #020306 100%);
+  --bg-end: #020306;
   --surface: rgba(10, 18, 34, 0.92);
   --surface-strong: rgba(7, 13, 28, 0.96);
   --surface-soft: rgba(255, 255, 255, 0.04);
@@ -28,6 +29,7 @@
   color-scheme: light;
   --bg: #f8fafc;
   --body-bg: linear-gradient(180deg, #f8fafc 0%, #eef2ff 60%, #e2e8f0 100%);
+  --bg-end: #e2e8f0;
   --surface: rgba(255, 255, 255, 0.96);
   --surface-strong: rgba(255, 255, 255, 1);
   --surface-soft: rgba(15, 23, 42, 0.06);
@@ -48,12 +50,19 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100%;
   min-height: 100vh;
-  background: var(--body-bg);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--body-bg) no-repeat;
+  background-color: var(--bg-end);
+  background-size: 100% 100vh;
   color: var(--text);
   transition: background-color 0.35s ease, color 0.35s ease, background 0.35s ease;
 }

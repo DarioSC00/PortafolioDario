@@ -16,9 +16,7 @@ export interface Project {
   repo?: string
   demo?: string
 }
-
-const PROJECTS_PER_PAGE = 3
-
+const PROJECTS_PER_PAGE = 6
 export default function Projects() {
   const [selected, setSelected] = useState<Project | null>(null)
   const [open, setOpen] = useState(false)
@@ -140,6 +138,16 @@ export default function Projects() {
         totalPages={totalPages}
         onPageChange={setCurrentPage}
       />
+
+      <div className="projects-cta" style={{ marginTop: '60px', textAlign: 'center', padding: '40px 20px', background: 'var(--surface-soft)', borderRadius: '24px', border: '1px solid var(--border)' }}>
+        <h3 style={{ fontSize: '1.8rem', color: 'var(--text)', marginBottom: '16px' }}>¿Listo para empezar un nuevo proyecto?</h3>
+        <p style={{ color: 'var(--muted)', marginBottom: '24px', maxWidth: '600px', margin: '0 auto 24px' }}>
+          Estoy disponible para nuevas oportunidades y colaboraciones. Si te gusta lo que ves, ¡hablemos!
+        </p>
+        <a href="/contact" className="primary-button" style={{ display: 'inline-flex', textDecoration: 'none' }}>
+          Contactar ahora
+        </a>
+      </div>
 
       <VerDetalle open={open} onClose={closeModal} project={selected} />
     </section>
